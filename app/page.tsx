@@ -1,22 +1,24 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="bg-gray-100 h-screen flex items-center justify-center p-5">
-      <div className="bg-white w-full shadow-lg p-5 rounded-3xl max-w-screen-sm flex flex-col ring ring-transparent transition-shadow md:flex-row gap-2 *:outline-none has-[:invalid]:ring-red-200 ">
-        <input
-          className="w-full rounded-full h-12 bg-gray-200 pl-5  ring ring-transparent focus:ring-green-500 focus:ring-offset-2 transition-shadow placeholder:drop-shadow invalid:focus:ring-red-500 peer"
-          type="text"
-          required
-          placeholder="Email address"
-        />
-        <span className="text-red-500 font-medium hidden peer-invalid:block">
-          Email is required.
-        </span>
-        <button className="bg-black text-white py-2 rounded-full   active:scale-90 transition-transform font-medium md:px-10 peer-invalid:bg-red-200">
-          Login
-        </button>
+    <div className="flex flex-col justify-between items-center min-h-screen">
+      <div className="my-auto *:font-medium flex flex-col items-center gap-2">
+        <span className="text-9xl">🥕</span>
+        <h1 className="text-4xl">당근</h1>
+        <h2 className="text-2xl">당근 마켓에 어서오세요!</h2>
       </div>
-    </main>
+      <div className="flex flex-col items-center gap-3 w-full  p-5">
+        <Link href="/create-account" className="primary-btn py-2.5 text-lg">
+          시작하기
+        </Link>
+        <div className="flex gap-2">
+          <span>이미 계정이 있나요?</span>
+          <Link href="/login" className="hover:underline underline-offset-4">
+            로그인
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }
